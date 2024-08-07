@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <title>Theatrical Show Report</title>
+</head>
+<body>
+    <h1>Theatrical Show Report PDF Maker</h1>
+    <p>Fill out this form then click GENERATE AS PDF, this will then download a pdf copy to your device.</p>
+    <form id="reportForm">
+        <label for="show_title">Show Title:</label>
+        <input type="text" id="show_title" name="show_title" required><br>
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required><br>
+        <label for="venue">Venue:</label>
+        <input type="text" id="venue" name="venue" required><br>
+        <label for="director">Director:</label>
+        <input type="text" id="director" name="director" required><br>
+        
+        <!-- New Written By Section -->
+        <label for="written_by">Written By:</label>
+        <input type="text" id="written_by" name="written_by"><br>
+        
+        <label for="running_time">Running Time:</label>
+        <input type="text" id="running_time" name="running_time" required><br>
+
+        <h2>Departments</h2>
+
+        <div class="section">
+            <label for="cast">Cast:</label>
+            <textarea id="cast" name="cast"></textarea><br>
+        </div>
+        
+        <div class="section">
+            <label for="set">Set:</label>
+            <textarea id="set" name="set"></textarea><br>
+        </div>
+        
+        <div class="section">
+            <label for="lighting">Lighting:</label>
+            <textarea id="lighting" name="lighting"></textarea><br>
+        </div>
+        
+        <div class="section">
+            <label for="sound">Sound:</label>
+            <textarea id="sound" name="sound"></textarea><br>
+        </div>
+        
+        <div class="section">
+            <label for="costumes">Costumes:</label>
+            <textarea id="costumes" name="costumes"></textarea><br>
+        </div>
+
+        <!-- DSM Section -->
+        <div class="section">
+            <label for="dsm">DSM Notes:</label>
+            <textarea id="dsm" name="dsm"></textarea><br>
+        </div>
+
+        <label for="notes">Notes:</label>
+        <textarea id="notes" name="notes" required></textarea><br>
+        
+        <input type="submit" value="GENERATE PDF">
+    </form>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <h2>Website by: Sam Studholme</h2>
+</body>
+</html>
