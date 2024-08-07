@@ -1,10 +1,10 @@
 document.getElementById('reportForm').addEventListener('submit', function(event) {
-  event.preventDefault(); // Prevent the form from submitting normally
+  event.preventDefault();
 
   const formData = new FormData(this);
   const data = Object.fromEntries(formData.entries());
 
-  fetch('https://895c34bc-770c-4688-aefd-00eb4c90965a-00-3fgkploaxsdgv.riker.replit.dev/', { // Replace with your Replit URL
+  fetch('https://895c34bc-770c-4688-aefd-00eb4c90965a-00-3fgkploaxsdgv.riker.replit.dev/', { 
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
